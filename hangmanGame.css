@@ -1,0 +1,249 @@
+/* 
+#091928 // dark color
+#0A5576 // background 
+#7C91A9 // grey color
+#EDEDED // offwhite
+#F0A45D // orange 
+*/
+* {
+	margin: 0;
+}
+:root {
+	--main-color: #F0A45D;
+	--bg-color:#0A5576;
+	--bg2-color: #EDEDED;
+	--hang-color: #253438 ;
+	--orange-color: #F0A45D;
+	--dark-color: #7C91A9;
+	box-sizing: border-box;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+.game-info  {
+	color: #EDEDED;
+	background-color: var(--bg-color);
+	height: 75px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+}
+.game-info .game-name span {
+/*	color: var(--orange-color);*/
+}
+.game-info .category span {
+	color: var(--orange-color);
+}
+
+.game {
+	background-color: var(--bg2-color) ;
+	height: calc(100vh - 95px);
+	display: flex;
+}
+.game .first-section {
+	position: relative;
+	flex: 1;
+	border-right: 3px solid var(--bg-color);
+	padding: 20px;
+
+}
+
+/* Start of the Drawing */
+.game .drawing {
+	height: 350px;
+}
+
+.game .drawing .hang-bottom {
+	position: absolute;
+	background-color: var(--hang-color);
+	width: 40px;
+	height: 4px;
+	left: 300px;
+	top: 300px;
+	display: none;
+}
+.game .drawing .hang-stand {
+	position: absolute;
+	background-color: var(--hang-color);
+	height: 200px;
+	width: 4px;
+	left: 318px;
+	top:100px;
+	display: none;
+}
+.game .drawing .hang-arm {
+	position: absolute;
+	background-color: var(--hang-color);
+	width: 70px;
+	height: 4px;
+	top: 100px;
+	left: 318px;
+	display: none;
+}
+.game .drawing .hang-rope {
+	position: absolute;
+	background-color: var(--hang-color);
+	width: 4px;
+	height: 30px;
+	left: 384px;
+	top: 104px;
+	display: none;
+}
+.game .drawing .hanger {
+	position: absolute;
+	border: 4px dotted var(--hang-color);
+	left: 357px;
+	top: 133px;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	display: none;
+}
+.game .drawing .head {
+	position: absolute;
+	background-color: var(--hang-color);
+	left: 363px;
+	top: 139px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: none;
+}
+.game .drawing .body {
+	position: absolute;
+	background-color: var(--hang-color);
+	left: 380px;
+	top: 178px;
+	width: 4px;
+	height: 60px;
+	display: none;
+}
+
+.game .drawing .hands {
+	display: none;
+}
+.game .drawing .hands::after,
+.game .drawing .hands::before
+ {
+	content: "";
+	position: absolute;
+	background-color: var(--hang-color);
+	top: 190px;
+	width: 4px;
+	height: 30px;
+}
+.game .drawing .hands::after{
+	left: 372px;
+	transform: rotate(30deg);
+	
+}
+.game .drawing .hands::before {
+	left: 388px;
+	transform: rotate(-30deg);
+	
+}
+.game .drawing .legs {
+	display: none;
+}
+
+.game .drawing .legs::after,
+.game .drawing .legs::before  {
+	content: "";
+	position: absolute;
+	background-color: var(--hang-color);
+	top: 235px;
+	width: 4px;
+	height: 30px;
+}
+.game .drawing .legs::after{
+	left: 372px;
+	transform: rotate(30deg);
+}
+.game .drawing .legs::before {
+	left: 388px;
+	transform: rotate(-30deg);
+}
+
+/*.game .drawing .mistake-1 , .game .drawing .mistake-2, .game .drawing .mistake-3, .game .drawing .mistake-4, .game .drawing .mistake-5, .game .drawing .mistake-6 , .game .drawing .mistake-7, .game .drawing .mistake-8, .game .drawing .mistake-9 {
+	display: initial; 
+}*/
+/* End of the Drawing */
+
+
+.game .guess {
+	margin-top: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.game .guess span {
+	display: inline-block;
+	width: 35px;
+	height: 50px;
+	margin: 5px;
+	border-bottom: solid 4px var(--bg-color);
+	color: transparent;
+	font-size: 40px;
+	text-align: center;
+	user-select: none;
+}
+
+.game .guess span.space {
+border-bottom: none;
+}
+
+.game .alphabet {
+	flex: 1;
+}
+
+.alphabet {
+	padding: 20px;
+	justify-content: center;
+}
+.alphabet span { 
+	display: inline-block;
+	width: 75px;
+	height: 75px;
+	background-color: var(--bg-color);
+/*	padding: auto 10px;*/
+	margin: 10px;
+	color: var(--bg2-color) ;
+	text-align: center;
+	line-height: 3;
+	font-size: 24px;
+	cursor: pointer;
+	user-select: none;
+}
+.clicked {
+	opacity: 0.2;
+	pointer-events:none;
+}
+
+/* Start Ending game */
+.ending-screen {
+	display: none;
+}
+.game-result {
+	width: 700px;
+	height: 300px;
+	background-color: var(--bg-color);
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 95%;
+	display: flex;
+	color: var(--bg2-color) ;
+	justify-content: center;
+	align-items: center;
+	font-size: 24px;
+}
+
+.blured { 
+	position: absolute;
+	width: 99vw;
+	height: calc(100vh - 95px);
+	top: 95px;
+	background-color: var(--dark-color);
+	opacity: 50%;
+}
+/* End Ending game */
