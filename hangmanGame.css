@@ -7,6 +7,8 @@
 */
 * {
 	margin: 0;
+	box-sizing: border-box;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 :root {
 	--main-color: #F0A45D;
@@ -15,8 +17,6 @@
 	--hang-color: #253438 ;
 	--orange-color: #F0A45D;
 	--dark-color: #7C91A9;
-	box-sizing: border-box;
-	font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 .game-info  {
 	color: #EDEDED;
@@ -33,7 +33,6 @@
 .game-info .category span {
 	color: var(--orange-color);
 }
-
 .game {
 	background-color: var(--bg2-color) ;
 	height: calc(100vh - 95px);
@@ -51,75 +50,60 @@
 .game .drawing {
 	height: 350px;
 }
-
-.game .drawing .hang-bottom {
+.game .drawing * {
 	position: absolute;
+	display: none;
+}
+.game .drawing .hang-bottom {
 	background-color: var(--hang-color);
 	width: 40px;
 	height: 4px;
 	left: 300px;
 	top: 300px;
-	display: none;
 }
 .game .drawing .hang-stand {
-	position: absolute;
 	background-color: var(--hang-color);
 	height: 200px;
 	width: 4px;
 	left: 318px;
 	top:100px;
-	display: none;
 }
 .game .drawing .hang-arm {
-	position: absolute;
 	background-color: var(--hang-color);
 	width: 70px;
 	height: 4px;
 	top: 100px;
 	left: 318px;
-	display: none;
 }
 .game .drawing .hang-rope {
-	position: absolute;
 	background-color: var(--hang-color);
 	width: 4px;
 	height: 30px;
 	left: 384px;
 	top: 104px;
-	display: none;
 }
 .game .drawing .hanger {
-	position: absolute;
 	border: 4px dotted var(--hang-color);
-	left: 357px;
+	left: 363px;
 	top: 133px;
 	width: 45px;
 	height: 45px;
 	border-radius: 50%;
-	display: none;
 }
 .game .drawing .head {
-	position: absolute;
 	background-color: var(--hang-color);
-	left: 363px;
-	top: 139px;
-	width: 40px;
-	height: 40px;
+	left: 367px;
+	top: 137px;
+	width: 37px;
+	height: 37px;
 	border-radius: 50%;
-	display: none;
 }
 .game .drawing .body {
-	position: absolute;
 	background-color: var(--hang-color);
-	left: 380px;
-	top: 178px;
+	left: 384px;
+	top: 173px;
 	width: 4px;
 	height: 60px;
-	display: none;
-}
-
-.game .drawing .hands {
-	display: none;
 }
 .game .drawing .hands::after,
 .game .drawing .hands::before
@@ -127,47 +111,36 @@
 	content: "";
 	position: absolute;
 	background-color: var(--hang-color);
-	top: 190px;
+	top: 165px;
 	width: 4px;
 	height: 30px;
 }
 .game .drawing .hands::after{
-	left: 372px;
+	left: 356px;
 	transform: rotate(30deg);
-	
 }
 .game .drawing .hands::before {
-	left: 388px;
+	left: 372px;
 	transform: rotate(-30deg);
-	
 }
-.game .drawing .legs {
-	display: none;
-}
-
 .game .drawing .legs::after,
 .game .drawing .legs::before  {
 	content: "";
 	position: absolute;
 	background-color: var(--hang-color);
-	top: 235px;
+	top: 208px;
 	width: 4px;
 	height: 30px;
 }
 .game .drawing .legs::after{
-	left: 372px;
+	left: 356px;
 	transform: rotate(30deg);
 }
 .game .drawing .legs::before {
-	left: 388px;
+	left: 372px;
 	transform: rotate(-30deg);
 }
-
-/*.game .drawing .mistake-1 , .game .drawing .mistake-2, .game .drawing .mistake-3, .game .drawing .mistake-4, .game .drawing .mistake-5, .game .drawing .mistake-6 , .game .drawing .mistake-7, .game .drawing .mistake-8, .game .drawing .mistake-9 {
-	display: initial; 
-}*/
 /* End of the Drawing */
-
 
 .game .guess {
 	margin-top: 50px;
@@ -186,15 +159,12 @@
 	text-align: center;
 	user-select: none;
 }
-
 .game .guess span.space {
 border-bottom: none;
 }
-
 .game .alphabet {
 	flex: 1;
 }
-
 .alphabet {
 	padding: 20px;
 	justify-content: center;
@@ -237,7 +207,6 @@ border-bottom: none;
 	align-items: center;
 	font-size: 24px;
 }
-
 .blured { 
 	position: absolute;
 	width: 99vw;

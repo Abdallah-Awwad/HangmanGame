@@ -62,8 +62,6 @@ alphabetLettersArray.forEach ((letter) => {
 					correctAudio.volume = 0.3;
 					correctAudio.play();
 					correctLetters += 1;
-					console.log(`Correct Letters: ${correctLetters}`);
-					console.log(`Word Length: ${randomValue.length}`);
 				}
 				// if the player guessed all the letters => game win
 				if (correctLetters === randomValue.length) {
@@ -71,56 +69,21 @@ alphabetLettersArray.forEach ((letter) => {
 					break;
 				}
 			}
-		}
+		} 
 		// if it doesn't exist ... mistakes +1
 		else {
 			mistakesCounter += 1;
+			// every mistake .. show part of the hang and then end the game
+			if (mistakesCounter <= 9) {
+				let mistake1 = document.querySelector(`.mistake-${mistakesCounter}`);
+				mistake1.style.display="initial";
+			} 
+			// Make mistake audio
 			let mistakeAudio = new Audio('audio/wrong-answer-129254.mp3');
 			mistakeAudio.volume = 0.1;
 			mistakeAudio.play();
-			console.log(`mistakesCounter: ${mistakesCounter}`);
-			// every mistake .. show part of the hang and then end the game
-			switch (mistakesCounter) {
-				case 1:
-					let mistake1 = document.querySelector(".mistake-1");
-					mistake1.style.display="initial";
-					break;
-				case 2:
-					let mistake2 = document.querySelector(".mistake-2");
-					mistake2.style.display="initial";
-					break;
-				case 3:
-					let mistake3 = document.querySelector(".mistake-3");
-					mistake3.style.display="initial";
-					break;
-				case 4:
-					let mistake4 = document.querySelector(".mistake-4");
-					mistake4.style.display="initial";
-					break;
-				case 5:
-					let mistake5 = document.querySelector(".mistake-5");
-					mistake5.style.display="initial";
-					break;
-				case 6:
-					let mistake6 = document.querySelector(".mistake-6");
-					mistake6.style.display="initial";
-					break;		
-				case 7:
-					let mistake7 = document.querySelector(".mistake-7");
-					mistake7.style.display="initial";
-					break;				
-				case 8:
-					let mistake8 = document.querySelector(".mistake-8");
-					mistake8.style.display="initial";
-					break;						
-				case 9:
-					let mistake9 = document.querySelector(".mistake-9");
-					mistake9.style.display="initial";
-					gameOver(0);
-					break;
-				default:
-					console.log("Error 404");
-			}
+			// Show end Screen
+			if (mistakesCounter == 9) gameOver(0);
 		}
 	};
 });
